@@ -16,9 +16,12 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="896"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-aC-AGG">
-                                <rect key="frame" x="172" y="201" width="46" height="30"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="system" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="oBa-aC-AGG">
+                                <rect key="frame" x="20" y="98" width="46" height="30"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="cg2-Hc-RLa"/>
+                                    <constraint firstAttribute="width" constant="46" id="xGH-7t-ulY"/>
+                                </constraints>
                                 <state key="normal" title="Button"/>
                                 <connections>
                                     <segue destination="Cjg-WG-0v5" kind="show" id="up2-F0-xbg"/>
@@ -33,20 +36,22 @@
                                     <segment title="正轉"/>
                                     <segment title="反轉"/>
                                 </segments>
-                                <connections>
-                                    <action selector="setdiract:" destination="BYZ-38-t0r" eventType="valueChanged" id="Vdn-Rg-Hme"/>
-                                </connections>
                             </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
                             <constraint firstItem="cZU-IU-RCs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="KNV-pN-ER2"/>
+                            <constraint firstItem="oBa-aC-AGG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="UTB-GF-x4J"/>
                             <constraint firstItem="cZU-IU-RCs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="bca-Xu-AMH"/>
+                            <constraint firstItem="oBa-aC-AGG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cc5-e0-hNh"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cZU-IU-RCs" secondAttribute="trailing" constant="10" id="f8E-XE-zCB"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AFQ-4S-ipI"/>
+                    <connections>
+                        <outlet property="dir" destination="cZU-IU-RCs" id="jP8-Ra-LAT"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

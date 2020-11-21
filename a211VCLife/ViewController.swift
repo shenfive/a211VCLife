@@ -13,18 +13,13 @@ class ViewController: UIViewController {
     var timer:Timer!
     var offset:Double = 1.0
     
+    @IBOutlet weak var dir: UISegmentedControl!
+    
     
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
     }
-    
-    
-    @objc func showCounter() {
-        print(counter)
-        counter += 1
-    }
-    
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
@@ -39,23 +34,30 @@ class ViewController: UIViewController {
         timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
             self.rotateView(targateView: newView)
         })
-
     }
     
     func rotateView(targateView:UIView){
         let angle =  counter * .pi / 180
         targateView.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         targateView.center = self.view.center
+        
+        switch dir.selectedSegmentIndex {
+        case 0:
+            offset = 1
+        case 1:
+            offset = -1
+        default:
+            break
+        }
+        
         counter += offset
-//        print(counter)
     }
-
-    
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         print("viewDidAppear")
     }
+    
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("viewWillDisapper")
@@ -67,29 +69,15 @@ class ViewController: UIViewController {
                 view.removeFromSuperview()
             }
         }
-        
-        
-        
+
     }
+    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         print("viewDidDisappear")
     }
 
-    
-    @IBAction func setdiract(_ sender: UISegmentedControl) {
-        print(sender.selectedSegmentIndex)
-        switch sender.selectedSegmentIndex {
-        case 0:
-            offset = 1
-        case 1:
-            offset = -1
-        default:
-            break
-        }
-        
-    }
-    
+
 
 }
 
