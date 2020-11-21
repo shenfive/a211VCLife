@@ -11,6 +11,7 @@ class ViewController: UIViewController {
 
     var counter:Double = 0
     var timer:Timer!
+    var offset:Double = 1.0
     
     
     override func viewDidLoad() {
@@ -45,8 +46,8 @@ class ViewController: UIViewController {
         let angle =  counter * .pi / 180
         targateView.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
         targateView.center = self.view.center
-        counter -= 1
-        print(counter)
+        counter += offset
+//        print(counter)
     }
 
     
@@ -76,6 +77,18 @@ class ViewController: UIViewController {
     }
 
     
+    @IBAction func setdiract(_ sender: UISegmentedControl) {
+        print(sender.selectedSegmentIndex)
+        switch sender.selectedSegmentIndex {
+        case 0:
+            offset = 1
+        case 1:
+            offset = -1
+        default:
+            break
+        }
+        
+    }
     
 
 }

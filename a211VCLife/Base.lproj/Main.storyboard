@@ -24,9 +24,27 @@
                                     <segue destination="Cjg-WG-0v5" kind="show" id="up2-F0-xbg"/>
                                 </connections>
                             </button>
+                            <segmentedControl opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="left" contentVerticalAlignment="top" segmentControlStyle="plain" selectedSegmentIndex="0" translatesAutoresizingMaskIntoConstraints="NO" id="cZU-IU-RCs">
+                                <rect key="frame" x="10" y="148" width="394" height="31"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="30" id="spg-Mc-k9r"/>
+                                </constraints>
+                                <segments>
+                                    <segment title="正轉"/>
+                                    <segment title="反轉"/>
+                                </segments>
+                                <connections>
+                                    <action selector="setdiract:" destination="BYZ-38-t0r" eventType="valueChanged" id="Vdn-Rg-Hme"/>
+                                </connections>
+                            </segmentedControl>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
+                        <constraints>
+                            <constraint firstItem="cZU-IU-RCs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="KNV-pN-ER2"/>
+                            <constraint firstItem="cZU-IU-RCs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="bca-Xu-AMH"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cZU-IU-RCs" secondAttribute="trailing" constant="10" id="f8E-XE-zCB"/>
+                        </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AFQ-4S-ipI"/>
                 </viewController>
