@@ -29,7 +29,7 @@ class ViewController: UIViewController {
         super.viewWillAppear(animated)
         print("viewWillAppear")
         let newView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
-        newView.center = self.view.center
+        
         newView.backgroundColor = UIColor.red
         newView.transform = CGAffineTransform(rotationAngle: 0)
         view.addSubview(newView)
@@ -42,6 +42,7 @@ class ViewController: UIViewController {
     func rotateView(targateView:UIView){
         let angle =  counter * .pi / 180
         targateView.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
+        targateView.center = self.view.center
         counter -= 1
         print(counter)
     }
