@@ -17,8 +17,7 @@ class ViewController: UIViewController {
         super.viewDidLoad()
         print("viewDidLoad")
         
-        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(showCounter), userInfo: nil, repeats: true)
-        
+
         
     }
     
@@ -32,6 +31,8 @@ class ViewController: UIViewController {
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("viewWillAppear")
+        timer = Timer.scheduledTimer(timeInterval: 0.1, target: self, selector: #selector(showCounter), userInfo: nil, repeats: true)
+        
     }
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
@@ -40,6 +41,8 @@ class ViewController: UIViewController {
     override func viewWillDisappear(_ animated: Bool) {
         super.viewWillDisappear(animated)
         print("viewWillDisapper")
+        timer.invalidate()
+        
     }
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
