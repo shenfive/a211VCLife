@@ -9,10 +9,26 @@ import UIKit
 
 class ViewController: UIViewController {
 
+    var counter = 0
+    var timer:Timer!
+    
+    
     override func viewDidLoad() {
         super.viewDidLoad()
         print("viewDidLoad")
+        
+        timer = Timer.scheduledTimer(timeInterval: 1.0, target: self, selector: #selector(showCounter), userInfo: nil, repeats: true)
+        
+        
     }
+    
+    
+    @objc func showCounter() {
+        print(counter)
+        counter += 1
+    }
+    
+    
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         print("viewWillAppear")
@@ -30,6 +46,8 @@ class ViewController: UIViewController {
         print("viewDidDisappear")
     }
 
+    
+    
 
 }
 
