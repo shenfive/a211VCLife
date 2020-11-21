@@ -37,20 +37,27 @@
                                     <segment title="反轉"/>
                                 </segments>
                             </segmentedControl>
+                            <slider opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" value="1" minValue="0.0" maxValue="4" translatesAutoresizingMaskIntoConstraints="NO" id="Fgt-cI-HPu">
+                                <rect key="frame" x="18" y="202" width="378" height="31"/>
+                            </slider>
                         </subviews>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                         <color key="backgroundColor" systemColor="systemBackgroundColor"/>
                         <constraints>
+                            <constraint firstItem="Fgt-cI-HPu" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="A3I-rJ-S0Q"/>
                             <constraint firstItem="cZU-IU-RCs" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="10" id="KNV-pN-ER2"/>
                             <constraint firstItem="oBa-aC-AGG" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="10" id="UTB-GF-x4J"/>
                             <constraint firstItem="cZU-IU-RCs" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="60" id="bca-Xu-AMH"/>
                             <constraint firstItem="oBa-aC-AGG" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="20" id="cc5-e0-hNh"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="Fgt-cI-HPu" secondAttribute="trailing" constant="20" id="emG-oj-OIT"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="cZU-IU-RCs" secondAttribute="trailing" constant="10" id="f8E-XE-zCB"/>
+                            <constraint firstItem="Fgt-cI-HPu" firstAttribute="top" secondItem="cZU-IU-RCs" secondAttribute="bottom" constant="24" id="uMN-Ih-4Hc"/>
                         </constraints>
                     </view>
                     <navigationItem key="navigationItem" id="AFQ-4S-ipI"/>
                     <connections>
                         <outlet property="dir" destination="cZU-IU-RCs" id="jP8-Ra-LAT"/>
+                        <outlet property="speed" destination="Fgt-cI-HPu" id="l6c-xP-A3Y"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>

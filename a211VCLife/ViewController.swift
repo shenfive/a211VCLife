@@ -14,6 +14,7 @@ class ViewController: UIViewController {
     var offset:Double = 1.0
     
     @IBOutlet weak var dir: UISegmentedControl!
+    @IBOutlet weak var speed: UISlider!
     
     
     override func viewDidLoad() {
@@ -49,8 +50,8 @@ class ViewController: UIViewController {
         default:
             break
         }
-        
-        counter += offset
+        print(speed.value)
+        counter += offset * Double(speed.value)
     }
     
     override func viewDidAppear(_ animated: Bool) {
