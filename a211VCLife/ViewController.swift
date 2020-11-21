@@ -30,10 +30,10 @@ class ViewController: UIViewController {
         print("viewWillAppear")
         let newView = UIView(frame: CGRect(x: 0, y: 0, width: 100, height: 100))
         newView.center = self.view.center
-        newView.backgroundColor = UIColor.yellow
+        newView.backgroundColor = UIColor.red
         newView.transform = CGAffineTransform(rotationAngle: 0)
         view.addSubview(newView)
-        timer = Timer.scheduledTimer(withTimeInterval: 0.05, repeats: true, block: { (timer) in
+        timer = Timer.scheduledTimer(withTimeInterval: 0.01, repeats: true, block: { (timer) in
             self.rotateView(targateView: newView)
         })
 
@@ -42,7 +42,7 @@ class ViewController: UIViewController {
     func rotateView(targateView:UIView){
         let angle =  counter * .pi / 180
         targateView.transform = CGAffineTransform(rotationAngle: CGFloat(angle))
-        counter += 4
+        counter -= 1
         print(counter)
     }
 
@@ -56,6 +56,15 @@ class ViewController: UIViewController {
         super.viewWillDisappear(animated)
         print("viewWillDisapper")
         timer.invalidate()
+        for view in self.view.subviews{
+            if let button = view as? UIButton{
+                print(button)
+            }else{
+                view.removeFromSuperview()
+            }
+        }
+        
+        
         
     }
     override func viewDidDisappear(_ animated: Bool) {
